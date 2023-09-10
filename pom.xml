@@ -41,6 +41,18 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<distributionManagement>
+		 <snapshotRepository>
+		    <id>nexusRepo</id>
+		    <url>http://172.31.32.124:8081/repository/sample-snapshots/</url>
+		 </snapshotRepository>
+		
+		<repository>
+		    <id>nexusRepo</id>
+		    <url>http://172.31.32.124:8081/repository/sample-releases/</url>
+		</repository>
+  	</distributionManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

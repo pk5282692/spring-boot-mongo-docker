@@ -15,7 +15,10 @@ node{
       sh "mvn sonar:sonar"
     }
     
-    
+    stage("Nexus upload"){
+      sh "nexusArtifactUploader artifacts: [[artifactId: 'spring-boot-starter-parent', classifier: '', file: '*.jar', type: 'jar']], credentialsId: 'Nexuscred', groupId: 'org.springframework.boot', nexusUrl: '13.233.108.172:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'sample-releases', version: '2.1.5.RELEASE'"
+    }
+    /*
     stage('Build Docker Image'){
         sh 'docker build -t pk5282692/spring-boot-mongo .'
     }
@@ -39,7 +42,7 @@ node{
       stage("Deploy To Kuberates Cluster"){
         sh 'kubectl apply -f springBootMongo.yml'
       } 
-      
+      */
   
 }
 
