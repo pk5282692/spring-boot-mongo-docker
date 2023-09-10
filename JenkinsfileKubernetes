@@ -16,7 +16,7 @@ node{
     }
     
     stage("Nexus upload"){
-      sh "nexusArtifactUploader artifacts: [[artifactId: 'spring-boot-starter-parent', classifier: '', file: '*.jar', type: 'jar']], credentialsId: 'Nexuscred', groupId: 'org.springframework.boot', nexusUrl: '13.233.108.172:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'sample-releases', version: '2.1.5.RELEASE'"
+      sh "nexusArtifactUploader artifacts: [[artifactId: 'spring-boot-mango', classifier: '', file: 'target/*.jar', type: 'jar']], credentialsId: 'Nexuscred', groupId: 'org.springframework.boot', nexusUrl: '172.31.32.124:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-releases', version: 'nexus3'"
     }
     /*
     stage('Build Docker Image'){
