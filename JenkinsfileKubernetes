@@ -22,7 +22,7 @@ node{
     stage('Build Docker Image'){
         sh 'docker build -t pk5282692/spring-boot-mongo .'
     }
-    
+    */
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u pk5282692 -p ${DOKCER_HUB_PASSWORD}"
@@ -42,7 +42,7 @@ node{
       stage("Deploy To Kuberates Cluster"){
         sh 'kubectl apply -f springBootMongo.yml'
       } 
-      */
+      
   
 }
 
